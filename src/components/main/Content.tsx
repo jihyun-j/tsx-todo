@@ -1,32 +1,33 @@
 import React, { useState } from "react";
-import { v4 as uuidv4, v4 } from "uuid";
+import styled from "styled-components";
+import { Todo } from "./Form";
 
-type Todo = {
-  id: string;
-  title: string;
-  content: string;
-  isDone: boolean;
+type Props = {
+  todos: Todo;
+  onClickDeleteTodo: (id: string) => void;
+  onClickDoneTodo: (id: string) => void;
 };
 
-const Content = () => {
-  const [todo, setTodo] = useState<Todo>({
-    id: v4(),
-    title: "타입스크립트",
-    content: "투두리스트 만들기",
-    isDone: false,
-  });
+const Content = ({ todos, onClickDeleteTodo, onClickDoneTodo }: Props) => {
   return (
-    <div>
-      <div>Working</div>
-      <ul>
-        <li>{todo.title}</li>
-        <li>{todo.content}</li>
-        <button>삭제하기</button>
-        <button>완료</button>
-      </ul>
-      <div>Done</div>
-    </div>
+    <StContainer>
+      <p>{todos.title}</p>
+      <p>{todos.content}</p>
+      <button onClick={() => onClickDoneTodo(todos.id)}>
+        {todos.isDone ? "취소" : "완료"}
+      </button>
+      <button onClick={() => onClickDeleteTodo(todos.id)}>삭제</button>
+    </StContainer>
   );
 };
 
 export default Content;
+
+const StContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border: 1px solid #212121;
+  border-radius: 10px;
+  padding: 8px 16px;
+`;

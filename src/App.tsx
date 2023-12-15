@@ -1,18 +1,22 @@
 import React from "react";
-import Footer from "./components/footer/Footer";
+
 import Header from "./components/header/Header";
 import Form from "./components/main/Form";
-import Content from "./components/main/Content";
+import styled from "styled-components";
 
 function App() {
   return (
-    <div>
+    <Container>
       <Header />
       <Form />
-      <Content />
-      <Footer />
-    </div>
+    </Container>
   );
 }
 
 export default App;
+
+const Container = styled.div`
+  max-width: 1200px;
+  min-width: 800px;
+  margin: 50px auto;
+`;
