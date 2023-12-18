@@ -109,13 +109,23 @@ const StForm = styled.form`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin-top: 20px;
-  background-color: #ebebeb;
+  margin: 50px 0;
 
   & button {
     background-color: orange;
     border: none;
     padding: 8px 16px;
+    border-radius: 5px;
+  }
+
+  & label {
+    margin-right: 5px;
+  }
+
+  & input {
+    outline: none;
+    border: 1px solid #9b9bff;
+    padding: 8px;
     border-radius: 5px;
   }
 `;
@@ -127,13 +137,3 @@ const StListContainer = styled.div`
   flex-wrap: wrap;
   gap: 30px;
 `;
-
-/* <Content
-    id={todo.id}
-    title={todo.title}
-    content={todo.content}
-    isDone={todo.isDone}
-    onClickDeleteTodo={() => onClickDeleteTodo(todo.id)}
-    onClickDoneTodo={() => onClickDoneTodo(todo.id)}></Content>
-         
-       */
