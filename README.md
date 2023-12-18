@@ -2,7 +2,7 @@
 
 ## Components
 - header
-  -Header.tsx   
+  - Header.tsx   
 - main
   - Content // 작성된 할 일 List 나열
   - Form // 할일 작성 Form 
